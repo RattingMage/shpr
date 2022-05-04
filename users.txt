@@ -1,0 +1,24 @@
+0xd89CccA94818BDD3Ea0A918db6208b14Fe9234b6
+0xf01B635941547507fB6c72FC363B0Cea38098ee7
+0xb4a7297de3Ce4DBe6058f5C5513aC3dd0aF7beED
+
+4B9f5F702736180E7D6968acc30a4E4c88799E40  - 123
+
+enode://98ab6164775e1ef0d2d9e5d64a787c3c30ee3fdb4b2183842bef665c9ffac3e72c7343596640ec3f8f5950bebdd673295cdb4bc23578fdb7882d656488501337@91.107.37.136:30303
+
+
+
+1)Создаём акккаунты - geth --datadir data account new
+2)Создаём genesis.json (1 ether = 10^18 wei)
+3)Инициализируем сеть - geth init --datadir data genesis.json
+4)Подключаем к Remix
+  geth --networkid 123 --nat extip:192.168.1.214 --http --http.corsdomain="package://6fd22d6fe5549ad4c4d8fd3ca0b7816b.mod" --http.api web3,eth,debug,personal,net --datadir data --allow-insecure-unlock --unlock d89CccA94818BDD3Ea0A918db6208b14Fe9234b6 --netrestrict 192.168.1.214/24
+5)Запуск geth консоли - geth attach --datadir data ipc:\\.\pipe\geth.ipc
+
+
+2.подключение второго узла
+geth --networkid 123 --port 30303 --http --http.corsdomain="package://6fd22d6fe5549ad4c4d8fd3ca0b7816b.mod" --http.api web3,eth,debug,personal,net --datadir data-2 --allow-insecure-unlock --unlock ed2b42d7E6b300F2fc72C6865622E2f0F453D569 --bootnodes enode://98ab6164775e1ef0d2d9e5d64a787c3c30ee3fdb4b2183842bef665c9ffac3e72c7343596640ec3f8f5950bebdd673295cdb4bc23578fdb7882d656488501337@192.168.1.214:30303
+
+----------------
+https://geth.ethereum.org/docs/interface/private-network
+https://github.com/ethereum/wiki/wiki/%5BRussian%5D-%D0%A0%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%BE-%D0%BF%D0%BE-Solidity
