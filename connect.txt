@@ -1,0 +1,3 @@
+geth --networkid 123 --nat extip:10.143.2.25 --http --http.corsdomain="package://6fd22d6fe5549ad4c4d8fd3ca0b7816b.mod" --http.api web3,eth,debug,personal,net --datadir data --allow-insecure-unlock --unlock 2A84357dc1ceF6d0daDCdF4Ee2e5aD9922459C9E --netrestrict 10.143.2.25/24
+
+geth --networkid 123 --port 30303 --http --http.corsdomain="package://6fd22d6fe5549ad4c4d8fd3ca0b7816b.mod" --http.api web3,eth,debug,personal,net --datadir data-2 --allow-insecure-unlock --unlock ed2b42d7E6b300F2fc72C6865622E2f0F453D569 --bootnodes enode://676fce8e71e491d42ac1e3f6dbed5bb9b1a2c0fd527097cb8ede86085502d075caa3965854deb8ea333748a07ff866afbf45098232811670daa5c33a14cb7c71@10.143.2.25:30303
